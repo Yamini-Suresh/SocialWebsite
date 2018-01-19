@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="UTF-8">
+    <title>welcome to social website </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900">
+    <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheets/login.css">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="javascripts/login.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+ <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-cookies.min.js"></script>
+ <script src="js/app111.js"></script>
+    
+  </head>
+  <body>
+   
+
+<div class="container">
+  <div class="info"></div>
+</div>
+<div class="form-block">
+  <div class="login_header">Social Media</div>
+  <div class="register-form dsinz-form">
+    <div ng-controller="usercontroller">
+    <form name="registerform">
+      <input type="text" placeholder="Name" name="username" ng-model="userdetail.userName" required="required"/><span ng-show="registerform.username.$invalid" style="color:red"> Name required</span>
+      <input type="password" placeholder="Password" name="password" ng-model="userdetail.password" required="required"/>
+      <input type="text" ng-model="email" placeholder="Email Address" name="email" ng-model="userdetail.emailId" required="required"/>
+      <button class="dsinz-login" ng-click="insertuser()" >create</button>
+      <h3 ng-show="register.status=='N'"><b style="color:red;">Successfully Registered</b></h3>
+      <p class="message">Already registered?<a href="#" style="padding-left:4px">Sign In</a></p>
+    </form>
+    </div>
+  </div>
+  <div class="login-form dsinz-form">
+    <div ng-controller="logincontroller">
+    <form name="loginform">
+      <input type="text" name="username" placeholder="User Name" ng-model="userdetail.userName" required="required"/><span ng-show="loginform.username.$dirty &amp;&amp; loginform.username.$invalid" style="color:red;text-align:left;display:block">Name required</span>
+      <input type="password" name="password" placeholder="Password" ng-model="userdetail.password" required="required"/><span ng-show="loginform.password.$dirty &amp;&amp; loginform.password.$invalid" style="color:red;text-align:left;display:block">Password required</span>
+      <button class="dsinz-login" ng-click="login()" value="login">Login</button>
+      <p class="message">Not registered?<a href="#" style="padding-left:4px">Create an account</a></p>
+    </form>
+    </div>
+  </div>
+</div>
+
+  </body>
+</html>

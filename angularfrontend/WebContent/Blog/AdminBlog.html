@@ -1,0 +1,30 @@
+<div class="container" ng-controller="blogcontroller"> 
+    <hr>
+    <button type="button" class="btn btn-info" ng-click="getallblogs()">Admin Blog</button>
+    <span class="clearfix"></span>
+    <hr>
+      <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>BlogName</th>
+        <th>BlogContent</th>
+        <th colspan="2">operation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="blog in blogdata">
+        <td>{{$index+1}}</td>
+        <td>{{blog.blogName}}</td>
+         <td>{{blog.blogContent}}</td>
+         <td ng-show="blog.status=='NA'">
+        <button type="button" class="btn btn-info" ng-click="acceptblog(blog.blogId)">Approve</button>
+     </td>
+     <td ng-show="blog.status=='A'">
+        <button type="button" class="btn btn-danger" ng-click="rejectblog(blog.blogId)">Reject</button>
+     </td>
+      </tr>
+      
+    </tbody>
+  </table>  
+    </div>
